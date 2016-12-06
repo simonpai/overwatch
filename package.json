@@ -1,0 +1,40 @@
+{
+  "name": "node-overwatch",
+  "version": "0.0.1",
+  "description": "A package for JavaScript project static analysis",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simonpai/overwatch.git"
+  },
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "bin"
+  ],
+  "scripts": {
+    "clean": "rimraf ./lib/*",
+    "build": "npm run clean && babel src -d lib",
+    "prepublish": "npm run build",
+    "demo": "npm run build && babel-node ./test/demo.js"
+  },
+  "author": "simonpai",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.18.2",
+    "babel-preset-syntax-from-presets": "^1.0.1",
+    "es6-symbol": "^3.1.0",
+    "extend": "^3.0.0",
+    "glob": "^7.1.1",
+    "minimatch": "^3.0.3",
+    "object.values": "^1.0.3",
+    "resolve": "^1.1.7"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-1": "^6.16.0",
+    "json-loader": "^0.5.4",
+    "rimraf": "^2.5.4"
+  }
+}
